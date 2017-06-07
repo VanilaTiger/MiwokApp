@@ -19,6 +19,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,11 +29,52 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
-    }
 
-    public void openNumbersList(View view){
-        //TO:DO Write your code here
-        Intent i = new Intent(this, NumbersActivity.class);
-        startActivity(i);
+        //Find the view that shows numbers
+        TextView numbers= (TextView) findViewById(R.id.numbers);
+        TextView colors= (TextView) findViewById(R.id.colors);
+        TextView familymembers= (TextView) findViewById(R.id.family);
+        TextView phrases= (TextView) findViewById(R.id.phrases);
+
+        // Set a click listener on that view
+        numbers.setOnClickListener(new View.OnClickListener(){
+            //The code to be executed when the numbers view is clicked on
+            @Override
+            public void onClick(View view){
+                Intent numbersIntent = new Intent(MainActivity.this, NumbersActivity.class);
+                startActivity(numbersIntent);
+            }
+        });
+
+        // Set a click listener on that view
+        colors.setOnClickListener(new View.OnClickListener(){
+            //The code to be executed when the numbers view is clicked on
+            @Override
+            public void onClick(View view){
+                Intent colorsIntent = new Intent(MainActivity.this, ColorsActivity.class);
+                startActivity(colorsIntent);
+            }
+        });
+
+        // Set a click listener on that view
+        familymembers.setOnClickListener(new View.OnClickListener(){
+            //The code to be executed when the numbers view is clicked on
+            @Override
+            public void onClick(View view){
+                Intent familymembersIntent = new Intent(MainActivity.this, FamilyMembersActivity.class);
+                startActivity(familymembersIntent);
+            }
+        });
+
+        // Set a click listener on that view
+        phrases.setOnClickListener(new View.OnClickListener(){
+            //The code to be executed when the numbers view is clicked on
+            @Override
+            public void onClick(View view){
+                Intent phrasesIntent = new Intent(MainActivity.this, PhrasesActivity.class);
+                startActivity(phrasesIntent);
+            }
+        });
+
     }
 }
