@@ -27,18 +27,6 @@ public class NumbersActivity extends AppCompatActivity {
         words.add(new Word("nine","wo'e",R.drawable.number_eight));
         words.add(new Word("ten", "na'aacha",R.drawable.number_nine));
 
-/*
-        wordsList.add("two");
-        wordsList.add("three");
-        wordsList.add("four");
-        wordsList.add("five");
-        wordsList.add("six");
-        wordsList.add("seven");
-        wordsList.add("eight");
-        wordsList.add("nine");
-        wordsList.add("ten");
-*/
-
         // Create an {@link WordAdapter}, whose data source is a list of {@link Word}s. The
         // adapter knows how to create list items for each item in the list.
         WordAdapter adapter = new WordAdapter(this, words, R.color.category_numbers);
